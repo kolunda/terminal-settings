@@ -7,7 +7,7 @@
 add_newline = true
 
 #Prompt configuration options - does not require [prompt] section
-format = '''$os$username$hostname\[$directory\]
+format = '''$os$username$hostname\[$directory\]$git_branch$git_commit$git_status$git_state
 $time$memory_usage
 $character'''
 
@@ -64,6 +64,10 @@ format = '\[[$symbol$branch]($style)\]'
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
+disabled = false
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
 [golang]
 symbol = " "
